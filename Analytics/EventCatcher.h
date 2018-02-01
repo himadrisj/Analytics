@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Aspects.h"
+
+@protocol AspectToken;
 
 @interface EventCatcher : NSObject
 

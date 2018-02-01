@@ -8,6 +8,7 @@
 
 #import "EventCatcher.h"
 #import <UIKit/UIKit.h>
+#import "Aspects.h"
 
 @implementation EventCatcher
 

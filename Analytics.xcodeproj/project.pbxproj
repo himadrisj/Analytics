@@ -14,6 +14,7 @@
 		52267B2B2022E5EA0008429E /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 52267B292022E5EA0008429E /* Aspects.m */; };
 		52267B532023042A0008429E /* EventCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 52267B512023042A0008429E /* EventCatcher.h */; };
 		52267B542023042A0008429E /* EventCatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 52267B522023042A0008429E /* EventCatcher.m */; };
+		52267B66202326990008429E /* Aspects.h in Headers */ = {isa = PBXBuildFile; fileRef = 52267B282022E5E90008429E /* Aspects.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 			files = (
 				52267B532023042A0008429E /* EventCatcher.h in Headers */,
 				52267B162022DF630008429E /* Analytics.h in Headers */,
+				52267B66202326990008429E /* Aspects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +375,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = Analytics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.himadrisj.Analytics;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -397,6 +400,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = Analytics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.himadrisj.Analytics;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

@@ -160,11 +160,21 @@ static BOOL aspect_remove(AspectIdentifier *aspect, NSError * __autoreleasing *e
 }
 
 static void aspect_performLocked(dispatch_block_t block) {
+    static OSSpinLock aspect_lock = OS_SPINLOCK_INIT;
+    OSSpinLockLock(&aspect_lock);
+    block();
+    OSSpinLockUnlock(&aspect_lock);
+}
+
+
+/*
+static void aspect_performLocked(dispatch_block_t block) {
     static os_unfair_lock aspect_lock = OS_UNFAIR_LOCK_INIT;
     os_unfair_lock_lock(&aspect_lock);
     block();
     os_unfair_lock_unlock(&aspect_lock);
 }
+ */
 
 static SEL aspect_aliasForSelector(SEL selector) {
     NSCParameterAssert(selector);
