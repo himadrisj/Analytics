@@ -23,6 +23,7 @@
 		52267B7920232AF20008429E /* PPBatchEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7120232AF20008429E /* PPBatchEvent+CoreDataClass.swift */; };
 		52267B7A20232AF20008429E /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7220232AF20008429E /* PPBatchDataStoreController.swift */; };
 		52267B7B20232AF20008429E /* PPBatchEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */; };
+		52267B7E202333470008429E /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7D202333470008429E /* EventModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		52267B7120232AF20008429E /* PPBatchEvent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52267B7220232AF20008429E /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
 		52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52267B7D202333470008429E /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		52267B072022DF620008429E /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				52267B7C202333320008429E /* EventModel */,
 				52267B6720232AF20008429E /* Batching */,
 				52267B272022E5BF0008429E /* Aspect */,
 				52267B082022DF620008429E /* Analytics.h */,
@@ -165,6 +168,14 @@
 				52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		52267B7C202333320008429E /* EventModel */ = {
+			isa = PBXGroup;
+			children = (
+				52267B7D202333470008429E /* EventModel.swift */,
+			);
+			path = EventModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				52267B202022E41F0008429E /* HTAnalytics.swift in Sources */,
 				52267B7920232AF20008429E /* PPBatchEvent+CoreDataClass.swift in Sources */,
 				52267B7A20232AF20008429E /* PPBatchDataStoreController.swift in Sources */,
+				52267B7E202333470008429E /* EventModel.swift in Sources */,
 				52267B2B2022E5EA0008429E /* Aspects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
