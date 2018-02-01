@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(PPBatchEvent)
-public class PPBatchEvent: NSManagedObject {
+class PPBatchEvent: NSManagedObject {
 
     static func insertEventFor<T>(data: T, id: String, timestamp: Double, in moc: NSManagedObjectContext) -> PPBatchEvent? where T: Encodable {
         

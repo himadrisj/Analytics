@@ -10,7 +10,12 @@ import Foundation
 import HTAnalyticsPrivate
 
 public enum HTAnalyticsError {
-    case swizzleFailed
+    case controlSwizzleFailed
+    case viewLoadSwizzleFailed
+    
+    case controlTrackingStopFailed
+    case viewTrackingStopFailed
+    
     case exception
 }
 
@@ -64,26 +69,40 @@ public final class HTAnalytics: NSObject {
     
     private func _startTracking(_ trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
         if trackingDetail.contains(.controlClick) {
-            self.controlClickToken = self.eventDispatcher.swizzleControlClick()
+            guard let token = self.eventDispatcher.swizzleControlClick() else {
+                assert(false, "Swizzle failed")
+                return .error(.controlSwizzleFailed)
+            }
+            
+            self.controlClickToken = token
         }
         
         if trackingDetail.contains(.viewload) {
-            self.viewLoadToken = self.eventDispatcher.swizzleViewLoad()
+            guard let token = self.eventDispatcher.swizzleViewLoad() else {
+                assert(false, "Swizzle failed")
+                return .error(.viewLoadSwizzleFailed)
+            }
+            
+            self.viewLoadToken = token
         }
-        
         
         return .success
     }
     
     private func _stopTracking(_ trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
         if trackingDetail.contains(.controlClick) {
-            
+            guard let isRemoved = controlClickToken?.remove(), isRemoved == true else {
+                assert(false, "Unable to stop tracking")
+                return .error(.controlTrackingStopFailed)
+            }
         }
         
         if trackingDetail.contains(.viewload) {
-            
+            guard let isRemoved = controlClickToken?.remove(), isRemoved == true else {
+                assert(false, "Unable to stop tracking")
+                return .error(.viewTrackingStopFailed)
+            }
         }
-        
         
         return .success
     }

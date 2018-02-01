@@ -10,11 +10,11 @@ import Foundation
 
 typealias EventIngestionCompletion = (Bool, Error?, [String]) -> Void
 
-public protocol PPBatchManagerDelegate: class {
+protocol PPBatchManagerDelegate: class {
     func batchManagerShouldIngestBatch(_ manager: PPBatchManager, batch: [String], completion: @escaping (Bool, Error?) -> Void)
 }
 
-public class PPBatchManager {
+final class PPBatchManager {
     
     fileprivate let sizeStrategy: PPSizeBatchingStrategy
     fileprivate let timeStrategy: PPTimeBatchingStrategy
@@ -24,11 +24,11 @@ public class PPBatchManager {
     fileprivate let dbName: String
     private let dataStoreController: PPBatchDataStoreController?
 
-    public weak var delegate: PPBatchManagerDelegate?
+    weak var delegate: PPBatchManagerDelegate?
     
-    public var debugEnabled = false
+    var debugEnabled = false
     
-    public init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy, dbName: String) {
+    init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy, dbName: String) {
         self.sizeStrategy = sizeStrategy
         self.timeStrategy = timeStrategy
         self.dbName = dbName
@@ -45,7 +45,7 @@ public class PPBatchManager {
         timer?.invalidate()
     }
     
-    public func addToBatch<T>(_ event: T, timestamp: Double) where T: Encodable {
+    func addToBatch<T>(_ event: T, timestamp: Double) where T: Encodable {
         
         batchingQueue.async {
             
@@ -63,7 +63,7 @@ public class PPBatchManager {
         
     }
     
-    public func flush(_ forced: Bool) {
+    func flush(_ forced: Bool) {
         
         batchingQueue.async {
         

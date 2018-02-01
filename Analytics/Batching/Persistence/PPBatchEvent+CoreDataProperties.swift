@@ -12,12 +12,12 @@ import CoreData
 
 extension PPBatchEvent {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<PPBatchEvent> {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<PPBatchEvent> {
         return NSFetchRequest<PPBatchEvent>(entityName: "PPBatchEvent")
     }
 
-    @NSManaged public var data: String?
-    @NSManaged public var id: String?
-    @NSManaged public var timestamp: Double
+    @NSManaged var data: String?
+    @NSManaged var id: String?
+    @NSManaged var timestamp: Double
 
 }
