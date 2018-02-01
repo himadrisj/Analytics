@@ -12,6 +12,8 @@
 		52267B162022DF630008429E /* Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 52267B082022DF620008429E /* Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52267B202022E41F0008429E /* HTAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B1F2022E41F0008429E /* HTAnalytics.swift */; };
 		52267B2B2022E5EA0008429E /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 52267B292022E5EA0008429E /* Aspects.m */; };
+		52267B532023042A0008429E /* EventCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 52267B512023042A0008429E /* EventCatcher.h */; };
+		52267B542023042A0008429E /* EventCatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 52267B522023042A0008429E /* EventCatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		52267B282022E5E90008429E /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
 		52267B292022E5EA0008429E /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
 		52267B2C2022EE4B0008429E /* Info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Info.rtf; sourceTree = "<group>"; };
+		52267B512023042A0008429E /* EventCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventCatcher.h; sourceTree = "<group>"; };
+		52267B522023042A0008429E /* EventCatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventCatcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				52267B082022DF620008429E /* Analytics.h */,
 				52267B092022DF620008429E /* Info.plist */,
 				52267B1F2022E41F0008429E /* HTAnalytics.swift */,
+				52267B512023042A0008429E /* EventCatcher.h */,
+				52267B522023042A0008429E /* EventCatcher.m */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -111,6 +117,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52267B532023042A0008429E /* EventCatcher.h in Headers */,
 				52267B162022DF630008429E /* Analytics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52267B542023042A0008429E /* EventCatcher.m in Sources */,
 				52267B202022E41F0008429E /* HTAnalytics.swift in Sources */,
 				52267B2B2022E5EA0008429E /* Aspects.m in Sources */,
 			);

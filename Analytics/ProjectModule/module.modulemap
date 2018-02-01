@@ -1,3 +1,4 @@
 module HTAnalyticsPrivate {  
   header "../Aspect/Aspects.h"
+  header "../EventCatcher.h"
 }
