@@ -24,6 +24,7 @@
 		52267B7A20232AF20008429E /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7220232AF20008429E /* PPBatchDataStoreController.swift */; };
 		52267B7B20232AF20008429E /* PPBatchEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */; };
 		52267B7E202333470008429E /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7D202333470008429E /* EventModel.swift */; };
+		52267B8F20234AAA0008429E /* EventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B8E20234AAA0008429E /* EventDispatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		52267B7220232AF20008429E /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
 		52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52267B7D202333470008429E /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		52267B8E20234AAA0008429E /* EventDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDispatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				52267B1F2022E41F0008429E /* HTAnalytics.swift */,
 				52267B512023042A0008429E /* EventCatcher.h */,
 				52267B522023042A0008429E /* EventCatcher.m */,
+				52267B8E20234AAA0008429E /* EventDispatcher.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				52267B7720232AF20008429E /* BatchingDataModel.xcdatamodeld in Sources */,
 				52267B7820232AF20008429E /* PPBatchDataHandler.swift in Sources */,
 				52267B202022E41F0008429E /* HTAnalytics.swift in Sources */,
+				52267B8F20234AAA0008429E /* EventDispatcher.swift in Sources */,
 				52267B7920232AF20008429E /* PPBatchEvent+CoreDataClass.swift in Sources */,
 				52267B7A20232AF20008429E /* PPBatchDataStoreController.swift in Sources */,
 				52267B7E202333470008429E /* EventModel.swift in Sources */,

@@ -52,11 +52,13 @@ public final class HTEventViewLoad: HTEvent {
 
 public final class HTEventControlClick: HTEvent {
     public let controlName: String
+    public let title: String?
     public let  accessibilityIdentifier: String?
     
-    public init(appName: String, appBundleId: String, timeStamp: Int64, controlName: String, accessibilityIdentifier: String?) {
+    public init(appName: String, appBundleId: String, timeStamp: Int64, controlName: String, title: String?, accessibilityIdentifier: String?) {
         self.controlName = controlName
         self.accessibilityIdentifier = accessibilityIdentifier
+        self.title = title
         super.init(eventType: .controlClick, appName: appName, appBundleId: appBundleId, timeStamp: timeStamp)
     }
     

@@ -9,9 +9,14 @@
 import Foundation
 import HTAnalyticsPrivate
 
+public enum HTAnalyticsError {
+    case swizzleFailed
+    case exception
+}
+
 public enum HTAnalyticsStatus {
     case success
-    case error(NSError)
+    case error(HTAnalyticsError)
 }
 
 public struct TrackingDetail: OptionSet {
@@ -46,7 +51,7 @@ public final class HTAnalytics: NSObject {
     private var controlClickToken: AspectToken?
     private var viewLoadToken: AspectToken?
     
-    private let eventCatcher: EventCatcher
+    private let eventDispatcher: EventDispatcher
     
     static let sharedInstance: HTAnalytics = {
         let analytics = HTAnalytics()
@@ -54,17 +59,16 @@ public final class HTAnalytics: NSObject {
     }()
     
     override init() {
-        self.eventCatcher = EventCatcher()
+        self.eventDispatcher = EventDispatcher()
     }
     
     private func _startTracking(_ trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
         if trackingDetail.contains(.controlClick) {
-            
+            self.controlClickToken = self.eventDispatcher.swizzleControlClick()
         }
         
         if trackingDetail.contains(.viewload) {
-            self.eventCatcher.swizzleViewLoad()
-            
+            self.viewLoadToken = self.eventDispatcher.swizzleViewLoad()
         }
         
         
