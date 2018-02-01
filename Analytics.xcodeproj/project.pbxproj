@@ -15,6 +15,14 @@
 		52267B532023042A0008429E /* EventCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 52267B512023042A0008429E /* EventCatcher.h */; };
 		52267B542023042A0008429E /* EventCatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 52267B522023042A0008429E /* EventCatcher.m */; };
 		52267B66202326990008429E /* Aspects.h in Headers */ = {isa = PBXBuildFile; fileRef = 52267B282022E5E90008429E /* Aspects.h */; };
+		52267B7420232AF20008429E /* PPBatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B6920232AF20008429E /* PPBatchUtils.swift */; };
+		52267B7520232AF20008429E /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B6A20232AF20008429E /* PPBatchManager.swift */; };
+		52267B7620232AF20008429E /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B6B20232AF20008429E /* PPBatchStrategies.swift */; };
+		52267B7720232AF20008429E /* BatchingDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52267B6D20232AF20008429E /* BatchingDataModel.xcdatamodeld */; };
+		52267B7820232AF20008429E /* PPBatchDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7020232AF20008429E /* PPBatchDataHandler.swift */; };
+		52267B7920232AF20008429E /* PPBatchEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7120232AF20008429E /* PPBatchEvent+CoreDataClass.swift */; };
+		52267B7A20232AF20008429E /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7220232AF20008429E /* PPBatchDataStoreController.swift */; };
+		52267B7B20232AF20008429E /* PPBatchEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,14 @@
 		52267B2C2022EE4B0008429E /* Info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Info.rtf; sourceTree = "<group>"; };
 		52267B512023042A0008429E /* EventCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventCatcher.h; sourceTree = "<group>"; };
 		52267B522023042A0008429E /* EventCatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventCatcher.m; sourceTree = "<group>"; };
+		52267B6920232AF20008429E /* PPBatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchUtils.swift; sourceTree = "<group>"; };
+		52267B6A20232AF20008429E /* PPBatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchManager.swift; sourceTree = "<group>"; };
+		52267B6B20232AF20008429E /* PPBatchStrategies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchStrategies.swift; sourceTree = "<group>"; };
+		52267B6E20232AF20008429E /* BatchingDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BatchingDataModel.xcdatamodel; sourceTree = "<group>"; };
+		52267B7020232AF20008429E /* PPBatchDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchDataHandler.swift; sourceTree = "<group>"; };
+		52267B7120232AF20008429E /* PPBatchEvent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52267B7220232AF20008429E /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
+		52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,7 @@
 		52267B072022DF620008429E /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				52267B6720232AF20008429E /* Batching */,
 				52267B272022E5BF0008429E /* Aspect */,
 				52267B082022DF620008429E /* Analytics.h */,
 				52267B092022DF620008429E /* Info.plist */,
@@ -109,6 +126,45 @@
 				52267B2C2022EE4B0008429E /* Info.rtf */,
 			);
 			path = Aspect;
+			sourceTree = "<group>";
+		};
+		52267B6720232AF20008429E /* Batching */ = {
+			isa = PBXGroup;
+			children = (
+				52267B6820232AF20008429E /* Core */,
+				52267B6C20232AF20008429E /* Resources */,
+				52267B6F20232AF20008429E /* Persistence */,
+			);
+			path = Batching;
+			sourceTree = "<group>";
+		};
+		52267B6820232AF20008429E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				52267B6920232AF20008429E /* PPBatchUtils.swift */,
+				52267B6A20232AF20008429E /* PPBatchManager.swift */,
+				52267B6B20232AF20008429E /* PPBatchStrategies.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		52267B6C20232AF20008429E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52267B6D20232AF20008429E /* BatchingDataModel.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		52267B6F20232AF20008429E /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				52267B7020232AF20008429E /* PPBatchDataHandler.swift */,
+				52267B7120232AF20008429E /* PPBatchEvent+CoreDataClass.swift */,
+				52267B7220232AF20008429E /* PPBatchDataStoreController.swift */,
+				52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +280,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52267B7420232AF20008429E /* PPBatchUtils.swift in Sources */,
 				52267B542023042A0008429E /* EventCatcher.m in Sources */,
+				52267B7B20232AF20008429E /* PPBatchEvent+CoreDataProperties.swift in Sources */,
+				52267B7520232AF20008429E /* PPBatchManager.swift in Sources */,
+				52267B7620232AF20008429E /* PPBatchStrategies.swift in Sources */,
+				52267B7720232AF20008429E /* BatchingDataModel.xcdatamodeld in Sources */,
+				52267B7820232AF20008429E /* PPBatchDataHandler.swift in Sources */,
 				52267B202022E41F0008429E /* HTAnalytics.swift in Sources */,
+				52267B7920232AF20008429E /* PPBatchEvent+CoreDataClass.swift in Sources */,
+				52267B7A20232AF20008429E /* PPBatchDataStoreController.swift in Sources */,
 				52267B2B2022E5EA0008429E /* Aspects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +534,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		52267B6D20232AF20008429E /* BatchingDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52267B6E20232AF20008429E /* BatchingDataModel.xcdatamodel */,
+			);
+			currentVersion = 52267B6E20232AF20008429E /* BatchingDataModel.xcdatamodel */;
+			path = BatchingDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52267AFC2022DF620008429E /* Project object */;
 }
