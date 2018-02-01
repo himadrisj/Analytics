@@ -1,0 +1,3 @@
+module HTAnalyticsPrivate {  
+  header "../Aspect/Aspects.h"
+}

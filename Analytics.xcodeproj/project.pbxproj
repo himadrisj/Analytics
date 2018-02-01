@@ -10,6 +10,8 @@
 		52267B0F2022DF620008429E /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52267B052022DF620008429E /* Analytics.framework */; };
 		52267B142022DF620008429E /* AnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B132022DF620008429E /* AnalyticsTests.swift */; };
 		52267B162022DF630008429E /* Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 52267B082022DF620008429E /* Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52267B202022E41F0008429E /* HTAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B1F2022E41F0008429E /* HTAnalytics.swift */; };
+		52267B2B2022E5EA0008429E /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 52267B292022E5EA0008429E /* Aspects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,10 @@
 		52267B0E2022DF620008429E /* AnalyticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalyticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52267B132022DF620008429E /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
 		52267B152022DF630008429E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52267B1F2022E41F0008429E /* HTAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAnalytics.swift; sourceTree = "<group>"; };
+		52267B282022E5E90008429E /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		52267B292022E5EA0008429E /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+		52267B2C2022EE4B0008429E /* Info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Info.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,10 @@
 		52267B072022DF620008429E /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				52267B272022E5BF0008429E /* Aspect */,
 				52267B082022DF620008429E /* Analytics.h */,
 				52267B092022DF620008429E /* Info.plist */,
+				52267B1F2022E41F0008429E /* HTAnalytics.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -84,6 +92,16 @@
 				52267B152022DF630008429E /* Info.plist */,
 			);
 			path = AnalyticsTests;
+			sourceTree = "<group>";
+		};
+		52267B272022E5BF0008429E /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+				52267B282022E5E90008429E /* Aspects.h */,
+				52267B292022E5EA0008429E /* Aspects.m */,
+				52267B2C2022EE4B0008429E /* Info.rtf */,
+			);
+			path = Aspect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +166,7 @@
 				TargetAttributes = {
 					52267B042022DF620008429E = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					52267B0D2022DF620008429E = {
@@ -196,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52267B202022E41F0008429E /* HTAnalytics.swift in Sources */,
+				52267B2B2022E5EA0008429E /* Aspects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,18 +355,22 @@
 		52267B1A2022DF630008429E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = Analytics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.himadrisj.Analytics;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Analytics/ProjectModule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,18 +379,21 @@
 		52267B1B2022DF630008429E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = Analytics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.himadrisj.Analytics;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Analytics/ProjectModule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -374,6 +402,7 @@
 		52267B1D2022DF630008429E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AnalyticsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +416,7 @@
 		52267B1E2022DF630008429E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AnalyticsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
