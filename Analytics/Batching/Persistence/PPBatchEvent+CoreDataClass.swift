@@ -12,32 +12,21 @@ import CoreData
 @objc(PPBatchEvent)
 class PPBatchEvent: NSManagedObject {
 
-    static func insertEventFor<T>(data: T, id: String, timestamp: Double, in moc: NSManagedObjectContext) -> PPBatchEvent? where T: Encodable {
+    static func insertEventFor<T>(data: T, id: String, timestamp: Double, in moc: NSManagedObjectContext) -> PPBatchEvent? where T: Mappable {
         
         guard let newEvent = NSEntityDescription.insertNewObject(forEntityName: "PPBatchEvent", into: moc) as? PPBatchEvent else {
             return nil
         }
         
-        do {
-            let jsonEncoder = JSONEncoder()
-            jsonEncoder.outputFormatting = .prettyPrinted
-            let data = try jsonEncoder.encode(data)
-            
-            guard let jsonString = String(data: data, encoding: String.Encoding.utf8) else {
-                assert(false, "Data can't be converted to string")
-                print("Data can't be converted to string, backing out from writing it")
-                return nil
-            }
-            
-            newEvent.data = jsonString
-            
-        }
-        catch {
-            assert(false, "Data can't be encoded")
-            print("Data is in wrong format, backing out from writing it")
+        let json = data.toJSONString(prettyPrint: true)
+        
+        guard let jsonString = json else {
+            assert(false, "Data can't be converted to string")
+            print("Data can't be converted to string, backing out from writing it")
             return nil
         }
         
+        newEvent.data = jsonString
         newEvent.id = id
         newEvent.timestamp = timestamp
         

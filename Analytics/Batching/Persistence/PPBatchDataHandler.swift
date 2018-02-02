@@ -17,7 +17,7 @@ struct PPEventDataFetchResult {
 final class PPBatchDataHandler {
     
     
-    static func save<T>(event: T, id: String, timestamp: Double, moc: NSManagedObjectContext?) where T: Encodable {
+    static func save<T>(event: T, id: String, timestamp: Double, moc: NSManagedObjectContext?) where T: Mappable {
         
         guard let moc = moc else {
             assert(false, "moc not initialized")

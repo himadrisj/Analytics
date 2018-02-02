@@ -13,58 +13,88 @@ public enum HTEventType: String, Encodable {
     case viewLoad = "view_load"
 }
 
-public class HTEvent: Encodable {
-    public let eventType: HTEventType
-    public let appName: String
-    public let appBundleId: String
-    public let timeStamp: Int64
+class HTEvent: StaticMappable, Mappable {
+    var eventType: HTEventType = .controlClick
+    var appName: String = ""
+    var appBundleId: String = ""
+    var timeStamp: Int64 = 0
     
-    public init(eventType: HTEventType, appName: String, appBundleId: String, timeStamp: Int64) {
+    fileprivate init(eventType: HTEventType, appName: String, appBundleId: String, timeStamp: Int64) {
         self.eventType = eventType
         self.appName = appName
         self.appBundleId = appBundleId
         self.timeStamp = timeStamp
     }
     
-    enum CodingKeys: String, CodingKey {
-        case eventType = "event_type"
-        case appName = "app_name"
-        case appBundleId = "app_bundle_id"
-        case timeStamp = "time_stamp"
+    required init?(map: Map) { }
+    
+    func mapping(map: Map) {
+        eventType <- map["event_type"]
+        appName <- map["app_name"]
+        appBundleId <- map["app_bundle_id"]
+        timeStamp <- (map["time_stamp"], Int64Transform())
+    }
+    
+    static func objectForMapping(map: Map) -> BaseMappable? {
+        if let theType = map.JSON["type"] as? String {
+            switch theType {
+            case HTEventType.controlClick.rawValue:
+                return HTEventControlClick(map: map)
+                
+            case HTEventType.viewLoad.rawValue:
+                return HTEventViewLoad(map: map)
+                
+            default:
+                assert(false, "Wrong JSON data")
+                return nil
+            }
+        }
+        return nil
     }
 }
 
-public final class HTEventViewLoad: HTEvent {
-    public let viewControllerName: String
-    public let title: String?
+final class HTEventViewLoad: HTEvent {
+    var viewControllerName: String = ""
+    var title: String?
     
-    public init(appName: String, appBundleId: String, timeStamp: Int64, viewControllerName: String, title: String?) {
+    init(appName: String, appBundleId: String, timeStamp: Int64, viewControllerName: String, title: String?) {
         self.viewControllerName = viewControllerName
         self.title = title
         super.init(eventType: .viewLoad, appName: appName, appBundleId: appBundleId, timeStamp: timeStamp)
     }
     
-    enum CodingKeys: String, CodingKey {
-        case viewControllerName = "view_controller_name"
-        case title
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        viewControllerName <- map["view_controller_name"]
+        title <- map["title"]
     }
 }
 
-public final class HTEventControlClick: HTEvent {
-    public let controlName: String
-    public let title: String?
-    public let  accessibilityIdentifier: String?
+final class HTEventControlClick: HTEvent {
+    var controlName: String = ""
+    var title: String?
+    var accessibilityIdentifier: String?
     
-    public init(appName: String, appBundleId: String, timeStamp: Int64, controlName: String, title: String?, accessibilityIdentifier: String?) {
+    init(appName: String, appBundleId: String, timeStamp: Int64, controlName: String, title: String?, accessibilityIdentifier: String?) {
         self.controlName = controlName
         self.accessibilityIdentifier = accessibilityIdentifier
         self.title = title
         super.init(eventType: .controlClick, appName: appName, appBundleId: appBundleId, timeStamp: timeStamp)
     }
     
-    enum CodingKeys: String, CodingKey {
-        case controlName = "control_name"
-        case accessibilityIdentifier = "accessibility_identifier"
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        controlName <- map["control_name"]
+        title <- map["title"]
+        accessibilityIdentifier <- map["accessibility_identifier"]
     }
 }
 

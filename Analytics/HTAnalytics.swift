@@ -41,9 +41,9 @@ public struct TrackingDetail: OptionSet {
 public final class HTAnalytics: NSObject {
     
     // MARK: Public methods
-    @discardableResult public static func startTracking(trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
+    @discardableResult public static func startTracking(trackingDetail: TrackingDetail, sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy) -> HTAnalyticsStatus {
         let sharedInstance = HTAnalytics.sharedInstance
-        return sharedInstance._startTracking(trackingDetail)
+        return sharedInstance._startTracking(trackingDetail: trackingDetail, sizeStrategy: sizeStrategy, timeStrategy: timeStrategy)
     }
     
     @discardableResult public static func stopTracking(trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
@@ -67,9 +67,14 @@ public final class HTAnalytics: NSObject {
         self.eventDispatcher = EventDispatcher()
     }
     
-    private func _startTracking(_ trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
+    private func _startTracking(trackingDetail: TrackingDetail, sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy) -> HTAnalyticsStatus {
+        
+        _stopTracking(.all)
+        
+        eventDispatcher.initializeBatching(sizeStrategy: sizeStrategy, timeStrategy: timeStrategy)
+        
         if trackingDetail.contains(.controlClick) {
-            guard let token = self.eventDispatcher.swizzleControlClick() else {
+            guard let token = eventDispatcher.swizzleControlClick() else {
                 assert(false, "Swizzle failed")
                 return .error(.controlSwizzleFailed)
             }
@@ -78,7 +83,7 @@ public final class HTAnalytics: NSObject {
         }
         
         if trackingDetail.contains(.viewload) {
-            guard let token = self.eventDispatcher.swizzleViewLoad() else {
+            guard let token = eventDispatcher.swizzleViewLoad() else {
                 assert(false, "Swizzle failed")
                 return .error(.viewLoadSwizzleFailed)
             }
@@ -89,17 +94,17 @@ public final class HTAnalytics: NSObject {
         return .success
     }
     
-    private func _stopTracking(_ trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
+    @discardableResult private func _stopTracking(_ trackingDetail: TrackingDetail) -> HTAnalyticsStatus {
         if trackingDetail.contains(.controlClick) {
             guard let isRemoved = controlClickToken?.remove(), isRemoved == true else {
-                assert(false, "Unable to stop tracking")
+                //assert(false, "Unable to stop tracking")
                 return .error(.controlTrackingStopFailed)
             }
         }
         
         if trackingDetail.contains(.viewload) {
             guard let isRemoved = controlClickToken?.remove(), isRemoved == true else {
-                assert(false, "Unable to stop tracking")
+                //assert(false, "Unable to stop tracking")
                 return .error(.viewTrackingStopFailed)
             }
         }

@@ -45,7 +45,7 @@ final class PPBatchManager {
         timer?.invalidate()
     }
     
-    func addToBatch<T>(_ event: T, timestamp: Double) where T: Encodable {
+    func addToBatch<T>(_ event: T, timestamp: Double) where T: Mappable {
         
         batchingQueue.async {
             

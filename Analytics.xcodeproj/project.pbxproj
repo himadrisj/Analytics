@@ -25,6 +25,22 @@
 		52267B7B20232AF20008429E /* PPBatchEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */; };
 		52267B7E202333470008429E /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B7D202333470008429E /* EventModel.swift */; };
 		52267B8F20234AAA0008429E /* EventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52267B8E20234AAA0008429E /* EventDispatcher.swift */; };
+		522DA13020243EFD00858583 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12120243EFD00858583 /* Mappable.swift */; };
+		522DA13120243EFD00858583 /* ObjectMapper_Info.txt in Resources */ = {isa = PBXBuildFile; fileRef = 522DA12220243EFD00858583 /* ObjectMapper_Info.txt */; };
+		522DA13220243EFD00858583 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12320243EFD00858583 /* Operators.swift */; };
+		522DA13320243EFD00858583 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12420243EFD00858583 /* EnumOperators.swift */; };
+		522DA13420243EFD00858583 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12520243EFD00858583 /* EnumTransform.swift */; };
+		522DA13520243EFD00858583 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12620243EFD00858583 /* Mapper.swift */; };
+		522DA13620243EFD00858583 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12720243EFD00858583 /* Map.swift */; };
+		522DA13720243EFD00858583 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12820243EFD00858583 /* FromJSON.swift */; };
+		522DA13820243EFD00858583 /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12920243EFD00858583 /* TransformOperators.swift */; };
+		522DA13920243EFD00858583 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12A20243EFD00858583 /* ImmutableMappable.swift */; };
+		522DA13A20243EFD00858583 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12B20243EFD00858583 /* IntegerOperators.swift */; };
+		522DA13B20243EFD00858583 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12C20243EFD00858583 /* TransformType.swift */; };
+		522DA13C20243EFD00858583 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12D20243EFD00858583 /* MapError.swift */; };
+		522DA13D20243EFD00858583 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12E20243EFD00858583 /* ToJSON.swift */; };
+		522DA13E20243EFD00858583 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA12F20243EFD00858583 /* TransformOf.swift */; };
+		522DA1442024407100858583 /* Int64Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522DA1432024407100858583 /* Int64Transform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +76,22 @@
 		52267B7320232AF20008429E /* PPBatchEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52267B7D202333470008429E /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		52267B8E20234AAA0008429E /* EventDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDispatcher.swift; sourceTree = "<group>"; };
+		522DA12120243EFD00858583 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		522DA12220243EFD00858583 /* ObjectMapper_Info.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectMapper_Info.txt; sourceTree = "<group>"; };
+		522DA12320243EFD00858583 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		522DA12420243EFD00858583 /* EnumOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumOperators.swift; sourceTree = "<group>"; };
+		522DA12520243EFD00858583 /* EnumTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumTransform.swift; sourceTree = "<group>"; };
+		522DA12620243EFD00858583 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		522DA12720243EFD00858583 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		522DA12820243EFD00858583 /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
+		522DA12920243EFD00858583 /* TransformOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOperators.swift; sourceTree = "<group>"; };
+		522DA12A20243EFD00858583 /* ImmutableMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmutableMappable.swift; sourceTree = "<group>"; };
+		522DA12B20243EFD00858583 /* IntegerOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerOperators.swift; sourceTree = "<group>"; };
+		522DA12C20243EFD00858583 /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
+		522DA12D20243EFD00858583 /* MapError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
+		522DA12E20243EFD00858583 /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
+		522DA12F20243EFD00858583 /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
+		522DA1432024407100858583 /* Int64Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int64Transform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +134,7 @@
 		52267B072022DF620008429E /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				522DA12020243EFD00858583 /* ObjectMapper */,
 				52267B7C202333320008429E /* EventModel */,
 				52267B6720232AF20008429E /* Batching */,
 				52267B272022E5BF0008429E /* Aspect */,
@@ -177,8 +210,31 @@
 			isa = PBXGroup;
 			children = (
 				52267B7D202333470008429E /* EventModel.swift */,
+				522DA1432024407100858583 /* Int64Transform.swift */,
 			);
 			path = EventModel;
+			sourceTree = "<group>";
+		};
+		522DA12020243EFD00858583 /* ObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				522DA12120243EFD00858583 /* Mappable.swift */,
+				522DA12220243EFD00858583 /* ObjectMapper_Info.txt */,
+				522DA12320243EFD00858583 /* Operators.swift */,
+				522DA12420243EFD00858583 /* EnumOperators.swift */,
+				522DA12520243EFD00858583 /* EnumTransform.swift */,
+				522DA12620243EFD00858583 /* Mapper.swift */,
+				522DA12720243EFD00858583 /* Map.swift */,
+				522DA12820243EFD00858583 /* FromJSON.swift */,
+				522DA12920243EFD00858583 /* TransformOperators.swift */,
+				522DA12A20243EFD00858583 /* ImmutableMappable.swift */,
+				522DA12B20243EFD00858583 /* IntegerOperators.swift */,
+				522DA12C20243EFD00858583 /* TransformType.swift */,
+				522DA12D20243EFD00858583 /* MapError.swift */,
+				522DA12E20243EFD00858583 /* ToJSON.swift */,
+				522DA12F20243EFD00858583 /* TransformOf.swift */,
+			);
+			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522DA13120243EFD00858583 /* ObjectMapper_Info.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,16 +351,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522DA13C20243EFD00858583 /* MapError.swift in Sources */,
 				52267B7420232AF20008429E /* PPBatchUtils.swift in Sources */,
+				522DA13020243EFD00858583 /* Mappable.swift in Sources */,
+				522DA13E20243EFD00858583 /* TransformOf.swift in Sources */,
+				522DA13320243EFD00858583 /* EnumOperators.swift in Sources */,
 				52267B542023042A0008429E /* EventCatcher.m in Sources */,
+				522DA13B20243EFD00858583 /* TransformType.swift in Sources */,
+				522DA13520243EFD00858583 /* Mapper.swift in Sources */,
 				52267B7B20232AF20008429E /* PPBatchEvent+CoreDataProperties.swift in Sources */,
 				52267B7520232AF20008429E /* PPBatchManager.swift in Sources */,
 				52267B7620232AF20008429E /* PPBatchStrategies.swift in Sources */,
+				522DA13920243EFD00858583 /* ImmutableMappable.swift in Sources */,
 				52267B7720232AF20008429E /* BatchingDataModel.xcdatamodeld in Sources */,
+				522DA13620243EFD00858583 /* Map.swift in Sources */,
+				522DA13820243EFD00858583 /* TransformOperators.swift in Sources */,
 				52267B7820232AF20008429E /* PPBatchDataHandler.swift in Sources */,
 				52267B202022E41F0008429E /* HTAnalytics.swift in Sources */,
+				522DA13D20243EFD00858583 /* ToJSON.swift in Sources */,
+				522DA13A20243EFD00858583 /* IntegerOperators.swift in Sources */,
+				522DA13420243EFD00858583 /* EnumTransform.swift in Sources */,
+				522DA1442024407100858583 /* Int64Transform.swift in Sources */,
 				52267B8F20234AAA0008429E /* EventDispatcher.swift in Sources */,
 				52267B7920232AF20008429E /* PPBatchEvent+CoreDataClass.swift in Sources */,
+				522DA13720243EFD00858583 /* FromJSON.swift in Sources */,
+				522DA13220243EFD00858583 /* Operators.swift in Sources */,
 				52267B7A20232AF20008429E /* PPBatchDataStoreController.swift in Sources */,
 				52267B7E202333470008429E /* EventModel.swift in Sources */,
 				52267B2B2022E5EA0008429E /* Aspects.m in Sources */,
