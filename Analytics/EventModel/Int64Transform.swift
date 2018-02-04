@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 public struct Int64Transform: TransformType {
     public typealias Object = Int64
     public typealias JSON = NSNumber
