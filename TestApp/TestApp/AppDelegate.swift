@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let sizeStrategy = PPSizeBatchingStrategy(eventsBeforeIngestion: 20)
-        let timeStrategy = PPTimeBatchingStrategy(durationBeforeIngestion: 120)
+        let timeStrategy = PPTimeBatchingStrategy(durationBeforeIngestion: 10)
         
         HTAnalytics.startTracking(trackingDetail: .all, sizeStrategy: sizeStrategy, timeStrategy: timeStrategy)
         

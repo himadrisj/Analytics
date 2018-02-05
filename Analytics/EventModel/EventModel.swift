@@ -17,9 +17,9 @@ class HTEvent: StaticMappable, Mappable {
     var eventType: HTEventType = .controlClick
     var appName: String = ""
     var appBundleId: String = ""
-    var timeStamp: Int64 = 0
+    var timeStamp: String = ""
     
-    fileprivate init(eventType: HTEventType, appName: String, appBundleId: String, timeStamp: Int64) {
+    fileprivate init(eventType: HTEventType, appName: String, appBundleId: String, timeStamp: String) {
         self.eventType = eventType
         self.appName = appName
         self.appBundleId = appBundleId
@@ -32,11 +32,11 @@ class HTEvent: StaticMappable, Mappable {
         eventType <- map["event_type"]
         appName <- map["app_name"]
         appBundleId <- map["app_bundle_id"]
-        timeStamp <- (map["time_stamp"], Int64Transform())
+        timeStamp <- map["time_stamp"]
     }
     
     static func objectForMapping(map: Map) -> BaseMappable? {
-        if let theType = map.JSON["type"] as? String {
+        if let theType = map.JSON["event_type"] as? String {
             switch theType {
             case HTEventType.controlClick.rawValue:
                 return HTEventControlClick(map: map)
@@ -57,7 +57,7 @@ final class HTEventViewLoad: HTEvent {
     var viewControllerName: String = ""
     var title: String?
     
-    init(appName: String, appBundleId: String, timeStamp: Int64, viewControllerName: String, title: String?) {
+    init(appName: String, appBundleId: String, timeStamp: String, viewControllerName: String, title: String?) {
         self.viewControllerName = viewControllerName
         self.title = title
         super.init(eventType: .viewLoad, appName: appName, appBundleId: appBundleId, timeStamp: timeStamp)
@@ -79,7 +79,7 @@ final class HTEventControlClick: HTEvent {
     var title: String?
     var accessibilityIdentifier: String?
     
-    init(appName: String, appBundleId: String, timeStamp: Int64, controlName: String, title: String?, accessibilityIdentifier: String?) {
+    init(appName: String, appBundleId: String, timeStamp: String, controlName: String, title: String?, accessibilityIdentifier: String?) {
         self.controlName = controlName
         self.accessibilityIdentifier = accessibilityIdentifier
         self.title = title

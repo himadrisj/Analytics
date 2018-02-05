@@ -26,23 +26,27 @@
 		</data>
 		<key>Modules/Analytics.swiftmodule/i386.swiftdoc</key>
 		<data>
-		1IoCH8309Uf4/o8lBkmsm2at0a8=
+		Qi5q8tn1QleykvU8tItVIuRSAis=
 		</data>
 		<key>Modules/Analytics.swiftmodule/i386.swiftmodule</key>
 		<data>
-		FynrqRewMfOIM40LhC4an0KAXcU=
+		mUfyX/9V9WJtMFlfbxOVO4BT7PE=
 		</data>
 		<key>Modules/Analytics.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		fooyYlbAqVSDppvSvvNIqOOZi2E=
+		NQL3Jf8YZLmfllr4z7df0M1XIgk=
 		</data>
 		<key>Modules/Analytics.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		6iRzpt39JdEB+k+8gr6EZ066Y8Y=
+		zkR93A2HUfzsaI5hZoWpIKbpnrQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		n5is5S5fNSqvRhgqLUe1zqASDG0=
+		</data>
+		<key>ObjectMapper_Info.txt</key>
+		<data>
+		K11CO6XtXGCFH03izxp2LllEyiY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -95,44 +99,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1IoCH8309Uf4/o8lBkmsm2at0a8=
+			Qi5q8tn1QleykvU8tItVIuRSAis=
 			</data>
 			<key>hash2</key>
 			<data>
-			scfyywj6GUeoKLgn+T2ANMufdqqbscZNwDlXkiCdbnY=
+			6cCcqLCBQnyLZ3/AIyKgYgFBlJo67N4axRHRHJwHP1M=
 			</data>
 		</dict>
 		<key>Modules/Analytics.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FynrqRewMfOIM40LhC4an0KAXcU=
+			mUfyX/9V9WJtMFlfbxOVO4BT7PE=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZPbAUBMc6E3uuDbQb/DklDxlGLX+lDTB0oO55pX3xx8=
+			+zGG3ocEZtUYAM9evYrib02d2m9d4pimV7HPwXEH7uM=
 			</data>
 		</dict>
 		<key>Modules/Analytics.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fooyYlbAqVSDppvSvvNIqOOZi2E=
+			NQL3Jf8YZLmfllr4z7df0M1XIgk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Pyt636d9ao7e0rQETnEoTnEDbB1JvaTbtiwkEwNHOrg=
+			Oyyiv76DMIClPphBAC5K3PtY1U6IKKWfeOqE0sOzJLk=
 			</data>
 		</dict>
 		<key>Modules/Analytics.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6iRzpt39JdEB+k+8gr6EZ066Y8Y=
+			zkR93A2HUfzsaI5hZoWpIKbpnrQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			fx0lVKot4P72ZefmjHAIiFNLxgTa83YljDKbU31aWBw=
+			ZMzrmC1DRr/AygbldC6BW6pnUnTIR9Zef+iX9rWZuMw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -144,6 +148,17 @@
 			<key>hash2</key>
 			<data>
 			pXgSiRaGywpvJF8oNLvYiapGD4FZDDPDrvuMeVAu3H4=
+			</data>
+		</dict>
+		<key>ObjectMapper_Info.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K11CO6XtXGCFH03izxp2LllEyiY=
+			</data>
+			<key>hash2</key>
+			<data>
+			15G/f3ZtX+y5RVgPK4xNso0l9s/80EvcIORjPMGgT3Q=
 			</data>
 		</dict>
 	</dict>

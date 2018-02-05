@@ -32,7 +32,7 @@ final class EventDispatcher: EventCatcherDelegate, PPBatchManagerDelegate {
         self.eventCatcher = EventCatcher(delegate: self)
     }
     
-    private func getAppDetails() -> (appName: String, appBundleId: String, timeStamp: Int64) {
+    private func getAppDetails() -> (appName: String, appBundleId: String, timeStamp: String) {
         let appName = Bundle.main.infoDictionary!["CFBundleName"] as! String
         let bundleId = Bundle.main.bundleIdentifier!
         let timeStamp = getCurrentTimeStamp()
@@ -40,10 +40,11 @@ final class EventDispatcher: EventCatcherDelegate, PPBatchManagerDelegate {
         return (appName: appName, appBundleId: bundleId, timeStamp: timeStamp)
     }
     
-    private func getCurrentTimeStamp() -> Int64 {
+    private func getCurrentTimeStamp() -> String {
         let date = Date()
         let interval = (date.timeIntervalSince1970 * 1000)
-        return Int64(interval)
+        let tempInterval = Int64(interval)
+        return String(tempInterval)
     }
     
     static func timeStampInMilliSec(_ date: Date) -> Int64 {
@@ -68,9 +69,56 @@ final class EventDispatcher: EventCatcherDelegate, PPBatchManagerDelegate {
     // MARK: PPBatchManagerDelegate
     func batchManagerShouldIngestBatch(_ manager: PPBatchManager, batch: [String], completion: @escaping (Bool, Error?) -> Void) {
         
+        var events = [HTEvent]()
+        for eventString in batch {
+            let actualEvent = Mapper<HTEvent>().map(JSONString: eventString)
+            events.append(actualEvent!)
+        }
         
-        //This should be called after calling API, once it is ready
-        completion(true, nil)
+        
+        self.sendEventData(events: events) {
+            status in
+            
+            completion(status, nil)
+        }
+    }
+    
+    
+    func sendEventData(events: [HTEvent], completion: @escaping (Bool) -> Void) {
+        guard let url = URL(string: "http://ec2-35-170-198-42.compute-1.amazonaws.com:8080/save") else {
+            assert(false, "wrong URL")
+            completion(false)
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
+        urlRequest.httpMethod = "POST"
+        
+        let jsonString = Mapper().toJSONString(events, prettyPrint: true)
+        
+        guard let bodyData = jsonString?.data(using: String.Encoding.utf8) else {
+            assert(false, "wrong data")
+            completion(false)
+            return
+        }
+        
+        urlRequest.httpBody = bodyData
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest) {
+            data, response, error in
+            
+            guard let uResponse = response as? HTTPURLResponse, uResponse.statusCode == 201 else {
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        }
+        
+        task.resume()
     }
     
 }
